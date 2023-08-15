@@ -162,8 +162,8 @@ roomButtons.forEach(function (roomButton) {
       roomType.value = "Suite";
     } else if (roomButton.value === "standard") {
       roomType.value = "Standard";
-    } else if (roomButton.value === "mini") {
-      roomType.value = "Mini";
+    } else if (roomButton.value === "standard mini") {
+      roomType.value = "Standard Mini";
     }
   };
 });

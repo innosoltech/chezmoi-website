@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chez Moi Hotel</title>
+
+    <!-- custom stle sheet -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- owl carousel style sheet -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+      integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- all pluging style sheet -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <!----------------NAVBAR START------------------>
+    <header class="top-header">
+      <div class="content flex_space" id="">
+        <div class="logo">
+          <!-- <img src="images/logo.png" alt=""> -->
+          <p><strong>Logo Here</strong></p>
+        </div>
+        <div class="navlinks">
+          <ul id="menulist">
+            <li><a href="#home">home</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#rooms">rooms</a></li>
+            <li><a href="#gallery">gallery</a></li>
+            <li><a href="#services">services</a></li>
+            <!-- <li><a href="#get-discount">Get discount</a></li> -->
+            <li><a href="#contact">contact</a></li>
+            <li>
+              <button class="primary-btn" onclick="scrollToRooms()">
+                BOOK NOW
+              </button>
+            </li>
+          </ul>
+          <span class="fa fa-bars" onclick="menutoggle()"></span>
+        </div>
+      </div>
+    </header>
+    <!----------------NAVBAR ENDS------------------>
+
+    <!----------------HOME SECTION START------------------>
+    <section class="home" id="home">
+      <div class="content">
+        <div class="home-carousel owl-carousel owl-theme">
+          <div class="item">
+            <img src="Images\chezmoi\exterior_1.webp" alt="verandah-img" />
+            <div class="text">
+              <h1>Chez Moi</h1>
+              <p>Home away from home</p>
+              <div class="flex">
+                <div class="flex">
+                  <button class="primary-btn" onclick="scrollToRooms()">
+                    BOOK NOW
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="Images\chezmoi\suite_1.jpg" alt="htl-environ-img" />
+            <div class="text">
+              <h1>Affordable Rooms</h1>
+              <p>Welcoming ambience</p>
+              <div class="flex">
+                <div class="flex">
+                  <button class="primary-btn" onclick="scrollToRooms()">
+                    BOOK NOW
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!----------------HOME SECTION END------------------>
+
+    <!----------------ABOUT SECTION START------------------>
+    <section class="about top" id="about">
+      <div class="container flex">
+        <div class="left">
+          <div class="heading">
+            <!-- <h1>WELCOME</h1> -->
+            <h2>About Chez Moi</h2>
+          </div>
+          <p>
+            Located at one of Ghana's prime location, Spintex, in the capital
+            city of Accra, Chez Moi is just about a 15 minutes drive away from
+            Kotoka International Airport. The hotel happens to be located in the
+            same community as some of Ghana's largest shopping mall chains -
+            China Mall, Max Mart, Orca Deco, Melcom, etc. The hotel also finds
+            itself in the same cummunity as some of Ghana's finest restaurants.
+            By virtue of its location, getting around the city becomes
+            relatively easier.
+          </p>
+        </div>
+        <div class="right">
+          <img src="Images\chezmoi\frontdesk_2.jpg" alt="reception-img" />
+        </div>
+      </div>
+    </section>
+    <!----------------ABOUT SECTION END------------------>
+
+    <!----------------FAMOUS QUOTE SECTION START------------------>
+    <!-- <section class="counter top">
+      <div class="famousQuote">
+        <h1>"There is only one boss - the guest."</h1>
+      </div>
+    </section> -->
+    <!----------------FAMOUS QUOTE SECTION START------------------>
+
+    <!-- <button id="myBtn">Book Room</button> -->
+
+    <!--------------------BOOKING ENGINE START-------------------->
+    <section>
+      <div class="booking-engine-modal" id="#bookingModalScreen">
+        <div class="form-container">
+          <form
+            action="https://formspree.io/f/moqrlgle"
+            method="post"
+            class="booking-form"
+            id="booking-form"
+          >
+            <div class="form-field-style">
+              <label for="room-type">Room Type</label>
+              <input
+                type="text"
+                class="room-type"
+                id="room-type"
+                name="room-type"
+                value=""
+                readonly
+                required
+              />
+
+              <!-- <select name="room-type" id="room-type" required>
+                <option value="">--Select Room--</option>
+                <option value="deluxe">Deluxe</option>
+                <option value="super deluxe">Super Deluxe</option>
+                <option value="executive">Executive</option>
+                <option value="suite">Suite</option>
+                <option value="executive-suite">Executive Suite</option>
+              </select> -->
+            </div>
+
+            <div class="form-field-style">
+              <label for="check-in-date">Check-in Date</label>
+              <input
+                type="date"
+                name="check-in-date"
+                id="check-in-date"
+                required
+              />
+            </div>
+
+            <div class="form-field-style">
+              <label for="check-out-date">Check-out Date</label>
+              <input
+                type="date"
+                name="check-out-date"
+                id="check-out-date"
+                required
+              />
+            </div>
+
+            <div class="form-field-style">
+              <label for="number-of-guest">Number of Guests</label>
+              <input
+                type="number"
+                name="number-of-guest"
+                id="number-of-guest"
+                min="1"
+                required
+              />
+            </div>
+
+            <div class="form-field-style">
+              <label for="email">Your Email</label>
+              <input type="email" name="email" id="email" required />
+            </div>
+
+            <button type="submit" class="check-availability">
+              CHECK AVAILABILITY
+            </button>
+            <button type="button" class="close">CLOSE</button>
+          </form>
+        </div>
+      </div>
+      <div id="status"></div>
+    </section>
+    <!--------------------BOOKING ENGINE END-------------------->
+
+    <!--------------------ROOMS SECTION START------------------->
+    <section class="rooms" id="rooms">
+      <div class="container top">
+        <div class="heading">
+          <!-- <h1>EXPLORE</h1> -->
+          <h2>Rooms</h2>
+          <p>Explore our rooms</p>
+        </div>
+
+        <div class="content mtop">
+          <div class="room-carousel owl-carousel owl-theme">
+            <div
+              class="items room-card"
+              onmouseenter="addCardHighlight()"
+              onmouseleave="removeCardHighlight()"
+            >
+              <div class="image">
+                <img src="Images\chezmoi\suite_1.jpg" alt="" />
+              </div>
+              <div class="text">
+                <h2 class="">Suite</h2>
+                <p>
+                  Lorem ipsum dolor sit amet constur adipisicing elit sed do
+                  eiusmtem por incid.
+                </p>
+                <div class="button flex">
+                  <button class="primary-btn-rooms" value="suite">
+                    BOOK ROOM
+                  </button>
+                  <h3>
+                    ₵300
+                    <span>
+                      <br />
+                      Per Night
+                    </span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="items room-card"
+              onmouseenter="addCardHighlight()"
+              onmouseleave="removeCardHighlight()"
+            >
+              <div class="image">
+                <img src="Images\chezmoi\suite_1.jpg" alt="" />
+              </div>
+              <div class="text">
+                <h2 class="">Executive</h2>
+                <p>
+                  Lorem ipsum dolor sit amet constur adipisicing elit sed do
+                  eiusmtem por incid.
+                </p>
+                <div class="button flex">
+                  <button
+                    class="primary-btn-rooms"
+                    id="myBtn"
+                    value="executive"
+                  >
+                    BOOK ROOM
+                  </button>
+                  <h3>
+                    ₵250
+                    <span>
+                      <br />
+                      Per Night
+                    </span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="items room-card"
+              onmouseenter="addCardHighlight()"
+              onmouseleave="removeCardHighlight()"
+            >
+              <div class="image">
+                <img src="Images\chezmoi\standard_1.jpg" alt="" />
+              </div>
+              <div class="text">
+                <h2 class="">Standard</h2>
+                <p>
+                  Lorem ipsum dolor sit amet constur adipisicing elit sed do
+                  eiusmtem por incid.
+                </p>
+                <div class="button flex">
+                  <button class="primary-btn-rooms" value="standard">
+                    BOOK ROOM
+                  </button>
+                  <h3>
+                    ₵200
+                    <span>
+                      <br />
+                      Per Night
+                    </span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div
+              class="items room-card"
+              onmouseenter="addCardHighlight()"
+              onmouseleave="removeCardHighlight()"
+            >
+              <div class="image">
+                <img src="Images\chezmoi\mini_1.jpg" alt="" />
+              </div>
+              <div class="text">
+                <h2 class="">Mini</h2>
+                <p>
+                  Lorem ipsum dolor sit amet constur adipisicing elit sed do
+                  eiusmtem por incid.
+                </p>
+                <div class="button flex">
+                  <button class="primary-btn-rooms" value="mini">
+                    BOOK ROOM
+                  </button>
+                  <h3>
+                    ₵180
+                    <span>
+                      <br />
+                      Per Night
+                    </span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--------------------ROOMS SECTION END-------------------->
+
+    <!--------------------GALLERY SECTION START-------------------->
+    <section class="gallery" id="gallery">
+      <div class="container top">
+        <div class="heading">
+          <!-- <h1>PHOTOS</h1> -->
+          <h2>Gallery</h2>
+          <p>Check out our facility</p>
+        </div>
+      </div>
+
+      <div class="content mtop">
+        <div class="gallery-carousel owl-carousel owl-theme">
+          <div class="items">
+            <div class="img">
+              <img src="Images\chezmoi\gallery_1b.png" alt="" />
+            </div>
+            <div class="overlay">
+              <!-- <span class="fa fa-plus"> </span> -->
+              <h4>Side View</h4>
+            </div>
+          </div>
+          <div class="items">
+            <div class="img">
+              <img src="Images\chezmoi\gallery_2b.jpg" alt="" />
+            </div>
+            <div class="overlay">
+              <!-- <span class="fa fa-plus"> </span> -->
+              <h4>Reception</h4>
+            </div>
+          </div>
+          <div class="items">
+            <div class="img">
+              <img src="Images\chezmoi\gallery_3.jpg" alt="" />
+            </div>
+            <div class="overlay">
+              <!-- <span class="fa fa-plus"> </span> -->
+              <h4>Beautiful Rooms</h4>
+            </div>
+          </div>
+          <div class="items">
+            <div class="img">
+              <img src="Images\chezmoi\gallery_4b.png" alt="" />
+            </div>
+            <div class="overlay">
+              <!-- <span class="fa fa-plus"> </span> -->
+              <h4>Serene Environment</h4>
+            </div>
+          </div>
+          <div class="items">
+            <div class="img">
+              <img src="Images\chezmoi\gallery_5.jpg" alt="" />
+            </div>
+            <div class="overlay">
+              <!-- <span class="fa fa-plus"> </span> -->
+              <h4>Front View</h4>
+            </div>
+          </div>
+
+          <!-- Gallery image repeated -->
+          <div class="items">
+            <div class="img">
+              <img src="Images\chezmoi\gallery_1b.png" alt="" />
+            </div>
+            <div class="overlay">
+              <!-- <span class="fa fa-plus"> </span> -->
+              <h4>Side View</h4>
+            </div>
+          </div>
+          <div class="items">
+            <div class="img">
+              <img src="Images\chezmoi\gallery_2b.jpg" alt="" />
+            </div>
+            <div class="overlay">
+              <!-- <span class="fa fa-plus"> </span> -->
+              <h4>Reception</h4>
+            </div>
+          </div>
+          <div class="items">
+            <div class="img">
+              <img src="Images\chezmoi\gallery_3.jpg" alt="" />
+            </div>
+            <div class="overlay">
+              <!-- <span class="fa fa-plus"> </span> -->
+              <h4>Beautiful Rooms</h4>
+            </div>
+          </div>
+          <div class="items">
+            <div class="img">
+              <img src="Images\chezmoi\gallery_4b.png" alt="" />
+            </div>
+            <div class="overlay">
+              <!-- <span class="fa fa-plus"> </span> -->
+              <h4>Serene Environment</h4>
+            </div>
+          </div>
+          <div class="items">
+            <div class="img">
+              <img src="Images\chezmoi\gallery_5.jpg" alt="" />
+            </div>
+            <div class="overlay">
+              <!-- <span class="fa fa-plus"> </span> -->
+              <h4>Front View</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--------------------GALLERY SECTION END-------------------->
+
+    <!--------------------SERVICES SECTION START-------------------->
+    <section class="services top" id="services">
+      <div class="container">
+        <div class="heading">
+          <!-- <h1>SERVICES</h1> -->
+          <h2>Services</h2>
+          <p>We offer a range of services to make your stay comfortable</p>
+        </div>
+
+        <div class="content flex_space">
+          <div class="left grid2">
+            <div class="box">
+              <div class="text">
+                <i class="fa-solid fa-martini-glass-citrus"></i>
+                <h3>Room Service</h3>
+              </div>
+            </div>
+            <div class="box">
+              <div class="text">
+                <i class="fa-solid fa-van-shuttle"></i>
+                <h3>Pick-up & Drop off</h3>
+              </div>
+            </div>
+            <div class="box">
+              <div class="text">
+                <i class="fa-solid fa-wifi"></i>
+                <h3>Free Wi-Fi</h3>
+              </div>
+            </div>
+            <!-- <div class="box">
+              <div class="text">
+                <i class="fa-solid fa-utensils"></i>
+                <h3>In-house Restaurant</h3>
+              </div>
+            </div> -->
+            <div class="box">
+              <div class="text">
+                <i class="fa-solid fa-car"></i>
+                <h3>Car Rental</h3>
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <img src="Images\chezmoi\services_img_2.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--------------------SERVICES SECTION END-------------------->
+
+    <!--------------------TESTIMONIAL SECTION START-------------------->
+    <!-- <section class="Customer top">
+      <div class="container">
+        <div class="owl-carousel owl-carousel2 owl-theme">
+          <div class="item">
+            <i class="fa-solid fa-quote-right"></i>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <h3>Julia Robertson</h3>
+            <label>Julia Robertson</label>
+          </div>
+          <div class="item">
+            <i class="fa-solid fa-quote-right"></i>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <h3>Julia Robertson</h3>
+            <label>Julia Robertson</label>
+          </div>
+          <div class="item">
+            <i class="fa-solid fa-quote-right"></i>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <h3>Julia Robertson</h3>
+            <label>Julia Robertson</label>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!--------------------TESTIMONIAL SECTION END-------------------->
+
+    <!--------------------NEWS SECTION START------------------------->
+    <!-- <section class="news top rooms">
+      <div class="container">
+        <div class="heading">
+          <h1>NEWS</h1>
+          <h2>News</h2>
+          <p>
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt
+          </p>
+        </div>
+
+        <div class="content flex">
+          <div class="left grid2">
+            <div class="items">
+              <div class="image">
+                <img src="images/blog-1.png" alt="" />
+              </div>
+              <div class="text">
+                <h2>Finibus bonorum malorm.</h2>
+                <div class="admin flex">
+                  <i class="fa fa-user"></i>
+                  <label>Admin</label>
+                  <i class="fa fa-heart"></i>
+                  <label>500</label>
+                  <i class="fa fa-comments"></i>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </div>
+            <div class="items">
+              <div class="image">
+                <img src="images/blog-2.png" alt="" />
+              </div>
+              <div class="text">
+                <h2>Finibus bonorum malorm.</h2>
+                <div class="admin flex">
+                  <i class="fa fa-user"></i>
+                  <label>Admin</label>
+                  <i class="fa fa-heart"></i>
+                  <label>500</label>
+                  <i class="fa fa-comments"></i>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="right">
+            <div class="box flex">
+              <div class="img">
+                <img src="images/blog-s1.png" alt="" />
+              </div>
+              <div class="stext">
+                <h2>Etiam Vel Nequ</h2>
+                <p>
+                  Lorem ipsum dolor sit amet constur adipisicing elit sed do
+                  eiusmtem por incid.
+                </p>
+              </div>
+            </div>
+            <div class="box flex">
+              <div class="img">
+                <img src="images/blog-s2.png" alt="" />
+              </div>
+              <div class="stext">
+                <h2>Etiam Vel Nequ</h2>
+                <p>
+                  Lorem ipsum dolor sit amet constur adipisicing elit sed do
+                  eiusmtem por incid.
+                </p>
+              </div>
+            </div>
+            <div class="box flex">
+              <div class="img">
+                <img src="images/blog-s3.png" alt="" />
+              </div>
+              <div class="stext">
+                <h2>Etiam Vel Nequ</h2>
+                <p>
+                  Lorem ipsum dolor sit amet constur adipisicing elit sed do
+                  eiusmtem por incid.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!--------------------NEWS SECTION END------------------------->
+
+    <!--------------------GET DISCOUNT SECTION START------------------------->
+    <!-- <section class="get-discount mtop" id="get-discount">
+      <div class="container">
+        <div class="get-discount-div">
+          <h1>We notify you on our seasonal discount offers</h1>
+        </div>
+
+        <div class="get-discount-div">
+          <form action="https://formspree.io/f/moqrlgle" method="post">
+            <input
+              type="email"
+              placeholder="Enter your email, hit notify me, get discount notices!"
+              id="your-email"
+              name="send-me-seasonal-discount-offers"
+              required
+            />
+            <button type="submit" class="notify-me-btn" id="notify-me-btn">
+              <strong>NOTIFY ME</strong>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section> -->
+    <!--------------------GET DISCOUNT SECTION END------------------------->
+
+    <!--------------------FOOTER SECTION START------------------------->
+    <footer>
+      <div class="container grid" id="contact">
+        <div class="box">
+          <!-- <img src="images/logo-2.png" alt="" /> -->
+          <div>
+            <!-- Google map location -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.5787426852316!2d-0.07600728590823566!3d5.62902933447747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf8709a3f9d1e9%3A0x29cf31291a5828c!2sInnosol%20Technologies!5e0!3m2!1sen!2sgh!4v1648436530515!5m2!1sen!2sgh"
+              width="100%"
+              height="240"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <!-- <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p> -->
+
+          <div class="icon">
+            <i class="fa fa-facebook-f"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-youtube"></i>
+          </div>
+        </div>
+
+        <div class="box">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#rooms">Rooms</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#services">Services</a></li>
+            <!-- <li><a href="#get-discount">Get discount</a></li> -->
+          </ul>
+        </div>
+
+        <div class="box contact-us">
+          <h2>Contact Us</h2>
+          <p>
+            Location: Plot N<span>o</span> 193 Off Spintex Road, Spintex, Accra
+          </p>
+          <!-- <i class="fa fa-location-dot"></i>
+          <label>1201 park street, Avenue, Comm 11, Tema. </label> <br /> -->
+          <i class="fa fa-phone"></i>
+          <label>+233 55 750 5544</label> <br />
+          <i class="fa fa-envelope"></i>
+          <label>chezmoihotel@gmail.com</label> <br />
+        </div>
+      </div>
+    </footer>
+    <!--------------------FOOTER SECTION END------------------------->
+
+    <!--------------------COPY RIGHT SECTION START------------------------->
+    <div class="legal">
+      <p class="container">
+        &copy; <span class="year"></span> | Chez Moi Hotel | All Rights Reserved
+      </p>
+      <p class="developed-by">
+        Developed by:
+        <a href="https://innosoltechgh.com">Innosol Technologies</a>
+      </p>
+    </div>
+    <!--------------------COPY RIGHT SECTION END------------------------->
+
+    <!-- jquery script -->
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- owl carousel script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"
+      integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- custom script -->
+    <script src="site.js"></script>
+    <!-- fontawesome script -->
+    <script
+      src="https://kit.fontawesome.com/032d11eac3.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

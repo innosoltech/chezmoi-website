@@ -88,7 +88,7 @@ $(document).ready(function () {
     nav: false,
     dots: true,
     autoplay: true,
-    autoplayTimeout: 1000,
+    autoplayTimeout: 1500,
     autoplayHoverPause: true,
     navText: [
       "<i class = 'fa fa-chevron-left'></i>",

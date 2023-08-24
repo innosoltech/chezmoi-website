@@ -51,11 +51,11 @@
             <li><a href="#services">services</a></li>
             <!-- <li><a href="#get-discount">Get discount</a></li> -->
             <li><a href="#contact">contact</a></li>
-            <li>
+            <!-- <li>
               <button class="primary-btn" onclick="scrollToRooms()">
                 BOOK NOW
               </button>
-            </li>
+            </li> -->
           </ul>
           <span class="fa fa-bars" onclick="menutoggle()"></span>
         </div>
@@ -84,8 +84,8 @@
           <div class="item">
             <img src="Images\home\home_2.jpg" alt="htl-environ-img" />
             <div class="text">
-              <h1>Affordable Rooms</h1>
-              <p>Welcoming ambience</p>
+              <h1>Comfortable Rooms</h1>
+              <p>At affordable prices</p>
               <div class="flex">
                 <div class="flex">
                   <button class="primary-btn" onclick="scrollToRooms()">
@@ -145,7 +145,7 @@
       <div class="booking-engine-modal" id="#bookingModalScreen">
         <div class="form-container">
           <form
-            action="https://formspree.io/f/moqrlgle"
+            action="https://formsubmit.co/chezmoispintex@gmail.com"
             method="post"
             class="booking-form"
             id="booking-form"
@@ -208,6 +208,26 @@
               <input type="email" name="email" id="email" required />
             </div>
 
+            <div class="form-field-style">
+              <label for="tel">Phone Number (optional) </label>
+              <input type="tel" name="phone-number" id="phone-number" />
+            </div>
+
+            <!-- form submit special inputs -->
+            <input
+              type="hidden"
+              name="_next"
+              value="http://127.0.0.1:5500/thanks.html"
+            />
+
+            <input
+              type="hidden"
+              name="_subject"
+              value="Room availability status"
+            />
+
+            <input type="hidden" name="_captcha" value="false" />
+
             <button type="submit" class="check-availability">
               CHECK AVAILABILITY
             </button>
@@ -230,26 +250,27 @@
 
         <div class="content mtop">
           <div class="room-carousel owl-carousel owl-theme">
+            <!-- Standard mini room -->
             <div
               class="items room-card"
               onmouseenter="addCardHighlight()"
               onmouseleave="removeCardHighlight()"
             >
               <div class="image">
-                <img src="Images\rooms\suite_1.jpg" alt="" />
+                <img src="Images\rooms\standard-mini.jpg" alt="" />
               </div>
               <div class="text">
-                <h2 class="">Suite</h2>
+                <h2 class="">Standard Mini</h2>
                 <p>
-                  Lorem ipsum dolor sit amet constur adipisicing elit sed do
-                  eiusmtem por incid.
+                  Fully furnished, with toilet and bath, air condition, fridge
+                  and TV.
                 </p>
                 <div class="button flex">
-                  <button class="primary-btn-rooms" value="suite">
+                  <button class="primary-btn-rooms" value="standard mini">
                     BOOK ROOM
                   </button>
                   <h3>
-                    ₵250
+                    ₵150
                     <span>
                       <br />
                       Per Night
@@ -259,19 +280,50 @@
               </div>
             </div>
 
+            <!-- Standard room -->
             <div
               class="items room-card"
               onmouseenter="addCardHighlight()"
               onmouseleave="removeCardHighlight()"
             >
               <div class="image">
-                <img src="Images\rooms\suite_1.jpg" alt="" />
+                <img src="Images\rooms\standard.jpg" alt="" />
+              </div>
+              <div class="text">
+                <h2 class="">Standard</h2>
+                <p>
+                  Fully furnished, with toilet and bath, air condition, fridge
+                  and TV.
+                </p>
+                <div class="button flex">
+                  <button class="primary-btn-rooms" value="standard">
+                    BOOK ROOM
+                  </button>
+                  <h3>
+                    ₵170
+                    <span>
+                      <br />
+                      Per Night
+                    </span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- Executive -->
+            <div
+              class="items room-card"
+              onmouseenter="addCardHighlight()"
+              onmouseleave="removeCardHighlight()"
+            >
+              <div class="image">
+                <img src="Images\rooms\executive.jpg" alt="" />
               </div>
               <div class="text">
                 <h2 class="">Executive</h2>
                 <p>
-                  Lorem ipsum dolor sit amet constur adipisicing elit sed do
-                  eiusmtem por incid.
+                  Fully furnished, with toilet and bath, air condition, fridge
+                  and TV.
                 </p>
                 <div class="button flex">
                   <button
@@ -292,54 +344,27 @@
               </div>
             </div>
 
+            <!-- Suite -->
             <div
               class="items room-card"
               onmouseenter="addCardHighlight()"
               onmouseleave="removeCardHighlight()"
             >
               <div class="image">
-                <img src="Images\rooms\standard_1.jpg" alt="" />
+                <img src="Images\rooms\suite.jpg" alt="" />
               </div>
               <div class="text">
-                <h2 class="">Standard</h2>
+                <h2 class="">Suite</h2>
                 <p>
-                  Lorem ipsum dolor sit amet constur adipisicing elit sed do
-                  eiusmtem por incid.
+                  Fully furnished, with toilet and bath, air condition, fridge
+                  and TV.
                 </p>
                 <div class="button flex">
-                  <button class="primary-btn-rooms" value="standard">
+                  <button class="primary-btn-rooms" value="suite">
                     BOOK ROOM
                   </button>
                   <h3>
-                    ₵170
-                    <span>
-                      <br />
-                      Per Night
-                    </span>
-                  </h3>
-                </div>
-              </div>
-            </div>
-            <div
-              class="items room-card"
-              onmouseenter="addCardHighlight()"
-              onmouseleave="removeCardHighlight()"
-            >
-              <div class="image">
-                <img src="Images\rooms\standard_mini_1.jpg" alt="" />
-              </div>
-              <div class="text">
-                <h2 class="">Standard Mini</h2>
-                <p>
-                  Lorem ipsum dolor sit amet constur adipisicing elit sed do
-                  eiusmtem por incid.
-                </p>
-                <div class="button flex">
-                  <button class="primary-btn-rooms" value="standard mini">
-                    BOOK ROOM
-                  </button>
-                  <h3>
-                    ₵150
+                    ₵250
                     <span>
                       <br />
                       Per Night
@@ -771,7 +796,7 @@
           <i class="fa fa-phone"></i>
           <label>+233 55 445 2265</label> <br />
           <i class="fa fa-envelope"></i>
-          <label>chezmoihotel@gmail.com</label> <br />
+          <label>chezmoispintex@gmail.com</label> <br />
         </div>
       </div>
     </footer>

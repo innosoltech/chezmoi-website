@@ -168,7 +168,7 @@ header .navlinks span {
 @media only screen and (max-width: 768px) {
   header ul {
     position: absolute;
-    top: 50px;
+    top: 60px;
     left: 0;
     right: 0;
     width: 100%;

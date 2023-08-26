@@ -115,18 +115,14 @@ button {
 }
 
 header {
-  height: 12vh;
-  line-height: 12vh;
+  height: 10vh;
+  line-height: 10vh;
   padding: 0 20px;
   width: 100%;
 }
 
-/* header img {
-  margin: 10px 0;
-} */
-
-header img {
-  padding: 10px 0;
+.logo-container {
+  height: 10vh;
 }
 
 header ul {
@@ -165,8 +161,7 @@ header .navlinks span {
 @media only screen and (max-width: 768px) {
   header ul {
     position: absolute;
-    top: 60px;
-    /* top: 100px; */
+    top: 50px;
     left: 0;
     right: 0;
     width: 100%;

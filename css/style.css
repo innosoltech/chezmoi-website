@@ -123,6 +123,13 @@ header {
 
 .logo-container {
   height: 10vh;
+  /* border: 1px solid red; */
+}
+
+.logo-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 header ul {
